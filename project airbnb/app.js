@@ -13,6 +13,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.urlencoded({ extended: true }));
+
 app.use(userRouter);
 app.use(hostRouter);
 

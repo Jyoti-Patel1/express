@@ -4,9 +4,9 @@ const hostRouter = express.Router();
 
 hostRouter.get("/host/add-home", (req, res, next) => {
   res.send(`register your home here 
-    <form action="/host/add-home" method ="post">
-    <input type ="text" name = "house name" placeholder="enter house name"/>
-    <input type ="submit"/>
+    <form action="/host/add-home" method="post">
+    <input type="text" name="houseName" placeholder="enter house name"/>
+    <input type="submit"/>
     </form>
     `);
 });
