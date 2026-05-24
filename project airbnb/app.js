@@ -1,3 +1,6 @@
+//core module
+const path = require("path");
+
 //external module
 const express = require("express");
 
@@ -18,7 +21,9 @@ app.use(userRouter);
 app.use("/host", hostRouter);
 
 app.use((req, res, next) => {
-  res.status(404).send("<h1> page not found</h1>");
+  res
+    .status(404)
+    .sendFile(path.join(__dirname, "views", "404-page-not-found.html"));
 });
 
 const PORT = 8080;
