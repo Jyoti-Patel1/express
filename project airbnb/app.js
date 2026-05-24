@@ -7,6 +7,7 @@ const express = require("express");
 //local module
 const userRouter = require("./routes/userRouter");
 const hostRouter = require("./routes/hostRouter");
+const rootDir = require("./utils/path_url");
 
 const app = express();
 
@@ -23,7 +24,7 @@ app.use("/host", hostRouter);
 app.use((req, res, next) => {
   res
     .status(404)
-    .sendFile(path.join(__dirname, "views", "404-page-not-found.html"));
+    .sendFile(path.join(rootDir, "views", "404-page-not-found.html"));
 });
 
 const PORT = 8080;
