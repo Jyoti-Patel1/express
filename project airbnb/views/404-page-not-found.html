@@ -4,10 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 page not found</title>
+    <link rel="stylesheet" href="/home.css" />
   </head>
   <body>
     <header>
-      <h1>page not found on airbnb</h1>
+      <nav>
+        <ul>
+          <li><a href="/">go to home</a></li>
+          <li><a href="/host/add-home">Add home</a></li>
+        </ul>
+      </nav>
     </header>
+    <div class="error-container">
+      <h1>404</h1>
+
+      <p>oops! page not found</p>
+      <button onclick="window.location.href = '/'">go back home</button>
+    </div>
   </body>
 </html>

@@ -4,15 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add home</title>
+    <link rel="stylesheet" href="/home.css" />
   </head>
   <body>
     <header>
-      <h1>register your home here</h1>
+      <nav>
+        <ul>
+          <li><a href="/">go to home</a></li>
+          <li><a href="/host/add-home">Add home</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
+      <h2>register your home here</h2>
       <form action="/host/add-home" method="post">
-        <input type="text" name="houseName" placeholder="enter house name" />
-        <input type="submit" />
+        <input
+          class="input"
+          type="text"
+          name="houseName"
+          placeholder="enter house name"
+        />
+        <input class="input" id="input-submit" type="submit" />
       </form>
     </main>
   </body>
