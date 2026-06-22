@@ -1,0 +1,18 @@
+<%- include('partials/head')%>
+  </head>
+  <body>
+   <%- include('partials/nav')%> 
+    <main>
+      <h2>register your home here</h2>
+      <form action="/host/add-home" method="post">
+        <input
+          class="input"
+          type="text"
+          name="houseName"
+          placeholder="enter house name"
+        />
+        <input class="input" id="input-submit" type="submit" />
+      </form>
+    </main>
+  </body>
+</html>
