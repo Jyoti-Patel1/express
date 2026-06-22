@@ -41,14 +41,55 @@ nav a:hover {
   background-color: #e54e52;
 }
 
-main {
-  text-align: center;
-  padding: 5rem 2rem;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+main.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
   margin: 2rem auto;
-  max-width: 600px;
-  border-radius: 8px;
+  padding: 0 1rem;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.card h2 {
+  color: #e54e52;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.list-card h2 {
+  margin-bottom: 1.2rem;
+}
+
+.list-card ul {
+  list-style: disc inside;
+  margin: 0;
+  padding: 0;
+}
+
+.list-card li {
+  padding: 0.75rem 0;
+  color: #333;
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.list-card li:last-child {
+  border-bottom: none;
+}
+
+.empty-list {
+  color: #666;
+  text-align: center;
+  margin: 1rem 0 0;
 }
 
 h1,
@@ -57,12 +98,20 @@ h2 {
   font-size: 2rem;
   font-weight: bold;
 }
-
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .input {
-  width: 100%;
+  min-width: 100%;
   padding: 0.5rem;
   box-sizing: border-box;
   margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
 }
 
 #input-submit,

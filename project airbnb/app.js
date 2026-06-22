@@ -11,6 +11,9 @@ const rootDir = require("./utils/path_url");
 
 const app = express();
 
+app.set("view engine", "ejs");
+app.set("views", "views");
+
 app.use((req, res, next) => {
   console.log(req.url, req.method);
   next();

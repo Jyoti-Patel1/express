@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>airbnb</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">go to home</a></li>
+          <li><a href="/host/add-home">Add home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="cards">
+      <div class="card welcome-card">
+        <h2>welcome to airbnb</h2>
+      </div>
+      <div class="card list-card">
+        <h2>here are the registered home</h2>
+        <% if (registeredHomes.length === 0) { %>
+          <p class="empty-list">No homes have been added yet.</p>
+        <% } else { %>
+          <ul>
+            <% registeredHomes.forEach(home => { %>
+              <li><%= home.houseName %></li>
+            <% }) %>
+          </ul>
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>
