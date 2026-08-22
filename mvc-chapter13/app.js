@@ -26,9 +26,8 @@ app.use("/host", hostRouter);
 
 app.use(express.static(path.join(rootDir, "public")));
 
-app.use((req, res, next) => {
-  res.status(404).render("404-page-not-found", { pageTitle: "page not found" });
-});
+const errorController = require("./controllers/error");
+app.use(errorController.get404);
 
 const PORT = 8080;
 app.listen(PORT, () => {

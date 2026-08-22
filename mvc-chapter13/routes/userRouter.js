@@ -6,13 +6,7 @@ const express = require("express");
 const userRouter = express.Router();
 const { registeredHomes } = require("./hostRouter");
 
-userRouter.get("/", (req, res, next) => {
-  console.log(registeredHomes);
-  res.render("home", {
-    registeredHomes: registeredHomes,
-    pageTitle: "airbnb home",
-    currentPage: "home",
-  });
-});
+const homeController = require("../controllers/home");
+userRouter.get("/", homeController.getHome);
 
 module.exports = userRouter;
