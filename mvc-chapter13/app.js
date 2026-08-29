@@ -27,6 +27,7 @@ app.use("/host", hostRouter);
 app.use(express.static(path.join(rootDir, "public")));
 
 const errorController = require("./controllers/error");
+
 app.use(errorController.get404);
 
 const PORT = 8080;
