@@ -1,0 +1,39 @@
+<%- include('../partials/head')%>
+  </head>
+  <body>
+   <%- include('../partials/nav')%>
+    <main class="homes-container">
+      <div class="page-header">
+        <h1>Here are our favourite homes:</h1>
+      </div>
+
+      <% if (registeredHomes.length === 0) { %>
+        <p class="empty-list">No homes have been added yet.</p>
+      <% } else { %>
+        <div class="homes-grid">
+          <% registeredHomes.forEach(home => { %>
+            <article class="home-card">
+              <% if (home.photoUrl) { %>
+                <img src="<%= home.photoUrl %>" alt="<%= home.houseName %>" class="card-img" />
+              <% } else { %>
+                <div class="card-img placeholder">No image</div>
+              <% } %>
+              <div class="card-body">
+                <div>
+                  <h2 class="house-name"><%= home.houseName %></h2>
+                  <p class="location"><%= home.location %></p>
+                </div>
+                <div class="card-footer">
+                  <span class="price">Rs<%= home.price %> <span class="per-night">/ night</span></span>
+                  <span class="rating">★ <%= home.rating %></span>
+                  
+                </div>
+                <button class="btn">Book</button>
+              </div>
+            </article>
+          <% }) %>
+        </div>
+      <% } %>
+    </main>
+  </body>
+</html>

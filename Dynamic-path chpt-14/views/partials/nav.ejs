@@ -1,0 +1,44 @@
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="/" class="<%= currentPage === 'index' ? 'active' : '' %>">
+          airbnb</a
+        >
+      </li>
+      <li>
+        <a href="/homes" class="<%= currentPage === 'homes' ? 'active' : '' %>"
+          >Home-list</a
+        >
+      </li>
+      <li>
+        <a
+          href="/favourite"
+          class="<%= currentPage === 'favourite' ? 'active' : '' %>"
+          >favourite</a
+        >
+      </li>
+      <li>
+        <a
+          href="/bookings"
+          class="<%= currentPage === 'bookings' ? 'active' : '' %>"
+          >Bookings</a
+        >
+      </li>
+      <li>
+        <a
+          href="/host/add-home"
+          class="<%= currentPage === 'add-home' ? 'active' : '' %>"
+          >Add home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/host/host-home-list"
+          class="<%= currentPage === 'host homes' ? 'active' : '' %>"
+          >host homes</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
