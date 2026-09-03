@@ -2,8 +2,27 @@
   <nav>
     <ul>
       <li>
-        <a href="/" class="<%= currentPage === 'home' ? 'active' : '' %>"
-          >home</a
+        <a href="/" class="<%= currentPage === 'index' ? 'active' : '' %>">
+          airbnb</a
+        >
+      </li>
+      <li>
+        <a href="/homes" class="<%= currentPage === 'homes' ? 'active' : '' %>"
+          >Home-list</a
+        >
+      </li>
+      <li>
+        <a
+          href="/favourite"
+          class="<%= currentPage === 'favourite' ? 'active' : '' %>"
+          >favourite</a
+        >
+      </li>
+      <li>
+        <a
+          href="/bookings"
+          class="<%= currentPage === 'bookings' ? 'active' : '' %>"
+          >Bookings</a
         >
       </li>
       <li>
