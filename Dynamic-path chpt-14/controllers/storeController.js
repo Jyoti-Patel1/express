@@ -39,8 +39,19 @@ exports.getfavouriteList = (req, res, next) => {
 exports.getHomeDetails = (req, res, next) => {
   const homeId = req.params.homeId;
   console.log("At home detail page", homeId);
-  res.render("store/home-detail", {
-    pageTitle: "home detail",
-    currentPage: "homes",
+
+  Home.findById(homeId, (home) => {
+    if (!home) {
+      return res.status(404).render("store/404", {
+        pageTitle: "Home Not Found",
+        currentPage: "homes",
+      });
+    } else {
+      res.render("store/home-detail", {
+        pageTitle: "home detail",
+        currentPage: "homes",
+        home: home,
+      });
+    }
   });
 };

@@ -14,7 +14,7 @@
           <% registeredHomes.forEach(home => { %>
             <article class="home-card">
               <% if (home.photoUrl) { %>
-                <img src="<%= home.photoUrl %>" alt="<%= home.houseName %>" class="card-img" />
+                <img src="/image/<%= home.photoUrl %>" alt="<%= home.houseName %>" class="card-img" />
               <% } else { %>
                 <div class="card-img placeholder">No image</div>
               <% } %>
