@@ -2,35 +2,43 @@
   </head>
   <body>
    <%- include('../partials/nav')%>
-    <main class="homes-container">
-      <div class="page-header">
-        <h1>you are in home detail page.</h1>
+    <main class="home-detail-page">
+      <div class="detail-heading">
+        <p class="detail-eyebrow">Welcome to</p>
+        <h1>Details of <%= home.houseName %></h1>
       </div>
-        <article class="home-card">
-            <% if (home.photoUrl) { %>
-              <img src="/image/<%= home.photoUrl %>" alt="<%= home.houseName %>" class="card-img" />
-             <% } else { %>
-              <div class="card-img placeholder">No image</div>
-             <% } %>
-              <div class="card-body">
-                <div>
-                  <h2 class="house-name"><%= home.houseName %></h2>
-                  <p class="location"><%= home.location %></p>
-                </div>
-                <div class="card-footer">
-                  <span class="price">Rs<%= home.price %> <span class="per-night">/ night</span></span>
-                  <span class="rating">★ <%= home.rating %></span>
-                  
-                </div>
-                  <div class="store-btn">
-                    <a class="btn" href="/homes/<%= home.id %>">Details</a>
-                    <button class="btn">Book</button>
-                 </div>
-                
-              </div>
-            
-        </article>
-     
+
+      <article class="home-detail-card">
+        <div class="detail-image-wrap">
+          <% if (home.photoUrl) { %>
+            <img src="/image/<%= home.photoUrl %>" alt="<%= home.houseName %>" class="detail-image" />
+          <% } else { %>
+            <div class="detail-image detail-placeholder">No image available</div>
+          <% } %>
+        </div>
+
+        <div class="detail-content">
+          <div class="detail-row">
+            <h2>Description</h2>
+            <p>A welcoming home for your next stay.</p>
+          </div>
+          <div class="detail-row">
+            <h2>Location</h2>
+            <p><%= home.location %></p>
+          </div>
+          <div class="detail-row detail-row-inline">
+            <div>
+              <h2>Price</h2>
+              <p class="detail-price">Rs<%= home.price %> <span>/ night</span></p>
+            </div>
+            <div>
+              <h2>Rating</h2>
+              <p class="detail-rating">★ <%= home.rating %> / 5</p>
+            </div>
+          </div>
+          <button class="detail-book-button" type="button">Book this home</button>
+        </div>
+      </article>
     </main>
   </body>
 </html>
