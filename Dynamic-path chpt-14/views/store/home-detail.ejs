@@ -36,7 +36,11 @@
               <p class="detail-rating">★ <%= home.rating %> / 5</p>
             </div>
           </div>
-          <button class="detail-book-button" type="button">Book this home</button>
+          <div>
+          <%- include('../partials/favourite')%>
+          </div>
+          
+          
         </div>
       </article>
     </main>

@@ -304,7 +304,7 @@ button {
   background-color: #b92227;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 11px 16px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -321,7 +321,7 @@ button {
 }
 
 .store-btn .btn {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .store-btn a.btn {
@@ -433,7 +433,7 @@ button {
   color: #f2b01e;
 }
 
-.detail-book-button {
+.favourite-button {
   align-self: flex-start;
   margin-top: 1.25rem;
   padding: 0.7rem 1.2rem;
@@ -442,7 +442,7 @@ button {
   font-weight: 700;
 }
 
-.detail-book-button:hover {
+.favourite-button:hover {
   background: #b92f34;
 }
 

@@ -28,7 +28,7 @@ exports.getbookings = (req, res, next) => {
 
 exports.getfavouriteList = (req, res, next) => {
   Home.fetchAll((registeredHomes) => {
-    res.render("store/favourite", {
+    res.render("store/favourite-list", {
       registeredHomes: registeredHomes,
       pageTitle: "my favourite",
       currentPage: "favourite",
@@ -54,4 +54,9 @@ exports.getHomeDetails = (req, res, next) => {
       });
     }
   });
+};
+
+exports.postAddToFavourite = (req, res, next) => {
+  console.log("came to add a favourite", req.body);
+  res.render("/favourites");
 };
