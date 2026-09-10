@@ -58,5 +58,9 @@ exports.getHomeDetails = (req, res, next) => {
 
 exports.postAddToFavourite = (req, res, next) => {
   console.log("came to add a favourite", req.body);
-  res.render("/favourites");
+  favourtie.addTOFavourite(req.body.id, err);
+  if (error) {
+    console.log("errorehile marking favourite");
+  }
+  res.redirect("/favourites");
 };
