@@ -7,11 +7,11 @@
         <h1>Here are our favourite homes:</h1>
       </div>
 
-      <% if (registeredHomes.length === 0) { %>
+      <% if (!registeredHomes || registeredHomes.length === 0) { %>
         <p class="empty-list">No homes have been added yet.</p>
       <% } else { %>
         <div class="homes-grid">
-          <% registeredHomes.forEach(home => { %>
+          <% favouriteHomes.forEach(home => { %>
             <article class="home-card">
               <% if (home.photoUrl) { %>
                 <img src="/image/<%= home.photoUrl %>" alt="<%= home.houseName %>" class="card-img" />
