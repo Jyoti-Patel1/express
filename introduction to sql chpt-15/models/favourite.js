@@ -11,11 +11,12 @@ module.exports = class favourite {
         return callback(new Error("Home id is required"));
       }
 
-      if (favourites.includes(homeId)) {
+      const normalizedHomeId = String(homeId);
+      if (favourites.includes(normalizedHomeId)) {
         return callback(new Error("Home is already marked as favourite"));
       }
 
-      const updatedFavourites = [...favourites, homeId];
+      const updatedFavourites = [...favourites, normalizedHomeId];
 
       fs.writeFile(
         favouriteDataPath,

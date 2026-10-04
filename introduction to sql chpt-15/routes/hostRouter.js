@@ -11,5 +11,8 @@ const homeController = require("../controllers/hostController");
 hostRouter.get("/add-home", homeController.getAddHome);
 hostRouter.post("/add-home", homeController.postAddHome);
 hostRouter.get("/host-home-list", homeController.getHostHomes);
+hostRouter.get("/edit-home/:homeId", homeController.getEditHome);
+hostRouter.post("/edit-home", homeController.postEditHome);
+hostRouter.post("/delete-home/:homeId", homeController.postDeleteHome);
 
 module.exports = hostRouter;

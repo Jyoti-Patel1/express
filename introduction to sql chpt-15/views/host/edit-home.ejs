@@ -1,39 +1,19 @@
 <%- include('../partials/head')%>
   </head>
   <body>
-   <%- include('../partials/nav')%>
-    <main class="homes-container">
-      <div class="page-header">
-        <h1>Here are our registered homes:</h1>
-      </div>
-
-      <% if (registeredHomes.length === 0) { %>
-        <p class="empty-list">No homes have been added yet.</p>
-      <% } else { %>
-        <div class="homes-grid">
-          <% registeredHomes.forEach(home => { %>
-            <article class="home-card">
-              <% if (home.photoUrl) { %>
-                <img src="/image/<%= home.photoUrl %>" alt="<%= home.houseName %>" class="card-img" />
-              <% } else { %>
-                <div class="card-img placeholder">No image</div>
-              <% } %>
-              <div class="card-body">
-                <div>
-                  <h2 class="house-name"><%= home.houseName %></h2>
-                  <p class="location"><%= home.location %></p>
-                </div>
-                <div class="card-footer">
-                  <span class="price">Rs<%= home.price %> <span class="per-night">/ night</span></span>
-                  <span class="rating">★ <%= home.rating %></span>
-                  
-                </div>
-                <button class="book-btn">Book</button>
-              </div>
-            </article>
-          <% }) %>
-        </div>
-      <% } %>
+    <%- include('../partials/nav')%>
+    <main class="form-page">
+      <h2>Edit your home</h2>
+      <form class="home-form" action="/host/edit-home" method="post">
+        <input type="hidden" name="id" value="<%= home.id %>" />
+        <input class="input" type="text" name="houseName" value="<%= home.houseName %>" placeholder="enter house name" />
+        <input class="input" type="text" name="price" value="<%= home.price %>" placeholder="price per night" />
+        <input class="input" type="text" name="location" value="<%= home.location %>" placeholder="enter your location" />
+        <input class="input" type="text" name="rating" value="<%= home.rating %>" placeholder="rating" />
+        <input class="input" type="text" name="photoUrl" value="<%= home.photoUrl %>" placeholder="photo Url" />
+        <textarea class="input" name="description" placeholder="describe your home" rows="4"><%= home.description %></textarea>
+        <input class="input" id="input-submit" type="submit" value="Save changes" />
+      </form>
     </main>
   </body>
 </html>

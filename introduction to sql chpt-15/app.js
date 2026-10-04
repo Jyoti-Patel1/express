@@ -8,15 +8,6 @@ const express = require("express");
 const storeRouter = require("./routes/storeRouter");
 const hostRouter = require("./routes/hostRouter");
 const rootDir = require("./utils/path_url");
-const db = require("./utils/databaseUtil");
-
-db.execute("SELECT * FROM `homes`")
-  .then(([rows, fields]) => {
-    console.log("getting From DB", rows);
-  })
-  .catch((error) => {
-    console.log("error while reading home record", error);
-  });
 
 const app = express();
 
